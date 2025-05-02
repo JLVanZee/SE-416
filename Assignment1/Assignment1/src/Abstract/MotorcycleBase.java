@@ -1,17 +1,17 @@
 package Abstract;
 
-public abstract class Motorcycle {
+public abstract class MotorcycleBase {
     private int speed;
     private final String design;
 
     public abstract int getWheels();
 
-    public Motorcycle() {
+    public MotorcycleBase() {
         speed = 0;
         design = "basic";
     }
 
-    public Motorcycle(String design) {
+    public MotorcycleBase(String design) {
         this.design = design;
         speed = 0;
     }

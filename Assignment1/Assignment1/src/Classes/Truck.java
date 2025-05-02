@@ -1,12 +1,12 @@
 package Classes;
 
-import Abstract.Car;
+import Abstract.CarBase;
 
-public class Truck extends Car {
-    final private int MAX_WEIGHT = 10000;
+public class Truck extends CarBase {
     private int currentWeight;
     private int trailerWeight;
 
+    // checks to see if trailer weight is needed in total weight calculation
     private boolean isHauling;
 
     public Truck(String color) {
@@ -16,8 +16,13 @@ public class Truck extends Car {
     }
 
     @Override
+    public int getMaxWeight() {
+        return 10000;
+    }
+
+    @Override
     public int addWeight(int weight) {
-        if ((currentWeight + weight + trailerWeight) < MAX_WEIGHT) {
+        if ((currentWeight + weight + trailerWeight) < this.getMaxWeight()) {
             return -1;
         } else {
             currentWeight += weight;
@@ -35,6 +40,7 @@ public class Truck extends Car {
         return 0;
     }
 
+    // adds trailer weight IFF it does not exceed the max weight
     private void attachTrailer(int trailerWeight) {
         if (!isHauling && addWeight(trailerWeight) == 0) { // Data coupling
             isHauling = true;

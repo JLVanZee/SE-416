@@ -1,9 +1,8 @@
 package Classes;
 
-import Abstract.Car;
+import Abstract.CarBase;
 
-public class SUV extends Car {
-    final private int MAX_WEIGHT = 5000;
+public class SUV extends CarBase {
     private int currentWeight;
 
     public SUV(String color) {
@@ -12,8 +11,13 @@ public class SUV extends Car {
     }
 
     @Override
+    public int getMaxWeight() {
+        return 5000;
+    }
+
+    @Override
     public int addWeight(int weight) {
-        if ((currentWeight + weight) < MAX_WEIGHT) {
+        if ((currentWeight + weight) < this.getMaxWeight()) {
             return -1;
         } else {
             currentWeight += weight;

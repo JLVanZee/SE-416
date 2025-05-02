@@ -2,7 +2,7 @@ package Abstract;
 
 import Interface.*;
 
-public abstract class Car implements Driveable {
+public abstract class CarBase implements IDriveable {
     private int speed;
     private final String color;
 
@@ -10,7 +10,10 @@ public abstract class Car implements Driveable {
 
     public abstract int removeWeight(int weight);
 
-    public Car(String color) {
+    public abstract int getMaxWeight();
+
+
+    public CarBase(String color) {
         this.color = color;
         speed = 0;
     }
@@ -30,6 +33,4 @@ public abstract class Car implements Driveable {
     public String getColor() {
         return color;
     }
-
-
 }

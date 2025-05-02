@@ -1,8 +1,8 @@
 package Classes;
 
-import Abstract.Motorcycle;
+import Abstract.MotorcycleBase;
 
-public class Trimotorcycle extends Motorcycle {
+public class Trimotorcycle extends MotorcycleBase {
     private final int totalWheels;
 
     private boolean passenger;

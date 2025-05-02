@@ -1,10 +1,9 @@
 package Classes;
 
-import Abstract.Car;
+import Abstract.CarBase;
 
-public class Sedan extends Car {
+public class Sedan extends CarBase {
     //private int speed;
-    final private int MAX_WEIGHT = 1000;
     private int currentWeight;
 
     public Sedan(String color) {
@@ -14,7 +13,7 @@ public class Sedan extends Car {
 
     @Override
     public int addWeight(int weight) {
-        if ((currentWeight + weight) < MAX_WEIGHT) {
+        if ((currentWeight + weight) < this.getMaxWeight()) {
             return -1;
         } else {
             currentWeight += weight;
@@ -31,4 +30,10 @@ public class Sedan extends Car {
         }
         return 0;
     }
+
+    @Override
+    public int getMaxWeight() {
+        return 1000;
+    }
+
 }

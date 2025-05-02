@@ -1,11 +1,11 @@
 package Classes;
 
-import Abstract.Motorcycle;
+import Abstract.MotorcycleBase;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public class Sportbike extends Motorcycle {
+public class Sportbike extends MotorcycleBase {
     private final int totalWheels;
     private Map<String, Integer> mileagePerYear;
 
